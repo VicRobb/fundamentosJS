@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mas pequeño y más grande</title>
+</head>
+<body>
+    <script>
+       const numeros = [2,2,9,7,11];
+       var newmay = 0;
+       var newmen = 0;
+
+        numeros.forEach(function(numeros, index) {
+            console.log(numeros);
+            if(newmay > numeros ){
+                newmay = newmay
+            }
+            else if (newmen < numeros){
+                newmen = newmen
+            }
+            else{
+                newmay = numeros;
+            }
+        });
+            console.log("El numero mayor es " + newmay)
+            console.log("\nEl numero menor es " + newmen)
+        
+    </script>
+    
+</body>
+</html>
