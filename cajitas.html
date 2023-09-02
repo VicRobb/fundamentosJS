@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajita Sorpresa</title>
+    <style>
+        .caja, cajaoculta{
+        width: 150 px
+        }
+        .caja:hover, .cajoculta:hover{
+            cursor: pointer;
+        }
+        .cajaoculta, .contenido{
+            display: none;
+        }
+        .contenido{
+            background-color: rgba(255, 228, 196, 0.363);
+            width: 100vw;
+            height:100vw;
+            position: absolute;
+            top: 0;
+            justify-content: center;
+            align-items: center;
+        }
+        .Sorpresa{
+            width: 500px;
+            height: 70vh;
+            background-color: cadetblue;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="cajas">
+        <img src="./img/caja1.png" alt="caja sin abrir" class="caja" id="caja1">
+        <img src="./img/caja2.png" alt="cajaabierta" class="cajaoculta" id="caja2">
+
+        <img src="./img/caja1.png" alt="caja sin abrir" class="cajaa" id="cajaa1">
+        <img src="./img/caja2.png" alt="cajaabierta" class="cajaocultaa" id="cajaa2">
+    </div>
+    <div class="contenido">
+        <div class="Sorpresa">
+            Ganaste
+        </div>
+    </div>
+    <script>
+        document.addEventListener("keyup", (evento)=>{
+            if(evento.keyCode == 27){
+                document.getElementsByClassName("contenido")[0].style.display="none";
+            }
+        });
+        function abrir(){
+            document.getElementById("caja1").style.display="none";
+            document.getElementById("cajaa1").style.display="none";
+            document.getElementById("cajaa2").style.display="inline";
+            document.getElementById("caja2").style.display="inline";
+            document.getElementsByClassName("contenido")[0].style.display="flex";
+        
+        }
+        function desaparecer(){
+            document.getElementsByClassName("contenido")[0].style.display="none";
+        }
+
+        //añadir mas cajitas y sorpresas en este codigo 
+        document.getElementById("caja1").addEventListener("click", abrir );
+        document.getElementById("cajaa1").addEventListener("click", abrir );
+        document.getElementsByClassName("contenido")[0].addEventListener("click", desaparecer )
+    </script>
+    
+</body>
+</html>
