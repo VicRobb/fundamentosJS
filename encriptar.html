@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="./encripat.css">
+</head>
+<style>
+    
+</style>
+<body>
+    <header> 
+        <p>Encriptador de texto</p>
+    </header>
+    <main>
+        <section>
+            <label for="">Texto a incriptar</label>
+            <input type="text" id="tex">
+            <p>	&#9432; Sólo letras minúsculas y sin acentos</p>
+            <div>
+                <button onclick="encriptar()" id="btnGuardar">Encriptar</button>
+                <button>Desencriptar</button>
+            </div>
+        </section>
+
+        <section>
+            <span id="resultado">Resultado?</span>
+            <div>
+                <div class="contenido">
+                <img src="./img/perritotriste.jpg" alt="Imagen buscando texto">
+                 </div>
+                <span>Ningún mensaje fue encontrado</span>
+                <span>Ingresa el texto que desees encriptar o desencriptar.</span>
+            </div>
+            <div>
+                <button>Copiar</button>
+            </div>
+        </section>
+    </main>
+    <script>
+        
+        const btnGuardar = document.getElementById("guardar");
+        var encrip = document.getElementById("tex");
+        var textoo = "";
+        function encriptar(){
+            if(encrip.value == textoo){ 
+                document.getElementsByClassName("contenido")[0].style.display="none";
+                console.log("Ingrese un texto perro")
+            }else{
+                
+                console.log(encrip.value);
+            }
+        }
+
+       
+
+    </script>
+</body>
+</html>
