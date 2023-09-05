@@ -7,25 +7,21 @@
 </head>
 <body>
     <script>
-       const numeros = [2,2,9,7,11];
-       var newmay = 0;
-       var newmen = 0;
+       let numeros = [2,2,9,7,1,11];
+       let newmen = numeros[0];
+       let newmay = numeros[0];
 
-        numeros.forEach(function(numeros, index) {
-            console.log(numeros);
-            if(newmay > numeros ){
-                newmay = newmay
+        for (let i = 1; i < numeros.length; i++) {
+            if (numeros[i] > newmay) {
+                newmay = numeros[i];
             }
-            else if (newmen < numeros){
-                newmen = newmen
+            if (numeros[i] < newmen) {
+                newmen = numeros[i];
             }
-            else{
-                newmay = numeros;
-            }
-        });
+        }
             console.log("El numero mayor es " + newmay)
             console.log("\nEl numero menor es " + newmen)
-        //mejorar
+       
     </script>
     
 </body>

@@ -41,9 +41,12 @@
          
             console.log(multiplicar(a,b))
         }
-        else if(operacion == 4){
+        else if(operacion == 4 && b != 0){
           
             console.log(division(a,b))
+        }
+        else if(operacion == 4 && b == 0){
+            console.log("No se puede dividir entre 0 campeon")
         }
         else{
             console.log("Ingrese la opción correcta de operación")
