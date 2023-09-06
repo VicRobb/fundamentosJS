@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de texto</title>
-    <link rel="stylesheet" href="./encripat.css">
 </head>
 <style>
-    
+    .img2{
+        opacity: 0;
+    }
 </style>
 <body>
     <header> 
@@ -16,46 +17,62 @@
     </header>
     <main>
         <section>
-            <label for="">Texto a incriptar</label>
+            <label for="tex">Texto a encriptar</label>
             <input type="text" id="tex">
             <p>	&#9432; Sólo letras minúsculas y sin acentos</p>
             <div>
-                <button onclick="encriptar()" id="btnGuardar">Encriptar</button>
-                <button>Desencriptar</button>
+                <button onclick="encriptar()" id="encriptar">Encriptar</button>
+                <button onclick="desencriptar()" id="desencriptar">Desencriptar</button>
             </div>
         </section>
 
         <section>
-            <span id="resultado">Resultado?</span>
+            <span id="resultado">Resultado:</span>
             <div>
                 <div class="contenido">
-                <img src="./img/perritotriste.jpg" alt="Imagen buscando texto">
+                <img src="./img/perritotriste.jpg" alt="Imagen buscando texto" class="img1">
+                <img src="./img/descarga.jpg" alt="Imagen que ya incripto algo" class="img2">
                  </div>
-                <span>Ningún mensaje fue encontrado</span>
-                <span>Ingresa el texto que desees encriptar o desencriptar.</span>
-            </div>
-            <div>
-                <button>Copiar</button>
             </div>
         </section>
     </main>
+
     <script>
-        
-        const btnGuardar = document.getElementById("guardar");
         var encrip = document.getElementById("tex");
-        var textoo = "";
-        function encriptar(){
-            if(encrip.value == textoo){ 
-                document.getElementsByClassName("contenido")[0].style.display="none";
-                console.log("Ingrese un texto perro")
-            }else{
-                
-                console.log(encrip.value);
+        var resultado = document.getElementById("resultado");
+
+
+        //lo hice con el idioma f pq no tenia los valores pipipi
+        function encriptar() {
+            var textoOriginal = encrip.value;
+
+            if (textoOriginal === "") {
+                document.getElementsByClassName("img1")[0].style.display = "none";
+                textoEncriptado = "Ingrese un texto a Encriptar";
+                resultado.textContent = "Resultado: " + textoEncriptado;
+            } else {
+                document.getElementsByClassName("img1")[0].style.display = "none";
+                document.getElementsByClassName("img2")[0].style.opacity = 1;
+                var textoEncriptado = textoOriginal.replace(/a/g, 'afa').replace(/e/g, 'efe').replace(/i/g, 'ifi').replace(/o/g, 'ofo').replace(/u/g, 'ufu');
             }
+            resultado.textContent = "Resultado: " + textoEncriptado;
         }
 
-       
+        function desencriptar() {
+            var textoOriginal = encrip.value;
 
+            if (textoOriginal === "") {
+                document.getElementsByClassName("img1")[0].style.display = "none";
+                textoEncriptado = "Ingrese un texto a Desencriptar";
+                resultado.textContent = "Resultado: " + textoEncriptado;
+            } else {
+                document.getElementsByClassName("img1")[0].style.display = "none";
+                document.getElementsByClassName("img2")[0].style.opacity = 1;
+                var textoEncriptado = textoOriginal.replace(/afa/g, 'a').replace(/efe/g, 'e').replace(/ifi/g, 'i').replace(/ofo/g, 'o').replace(/ufu/g, 'u');
+            }
+            resultado.textContent = "Resultado: " + textoEncriptado;
+        }
+        
     </script>
 </body>
 </html>

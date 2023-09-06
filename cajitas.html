@@ -11,7 +11,7 @@
         .caja:hover, .cajoculta:hover{
             cursor: pointer;
         }
-        .cajaoculta, .contenido{
+        .cajaoculta, .contenido, .cajaocultaa{
             display: none;
         }
         .contenido{
@@ -35,7 +35,8 @@
     <div class="cajas">
         <img src="./img/caja1.png" alt="caja sin abrir" class="caja" id="caja1">
         <img src="./img/caja2.png" alt="cajaabierta" class="cajaoculta" id="caja2">
-
+    </div>
+    <div class="cajas">
         <img src="./img/caja1.png" alt="caja sin abrir" class="cajaa" id="cajaa1">
         <img src="./img/caja2.png" alt="cajaabierta" class="cajaocultaa" id="cajaa2">
     </div>
@@ -52,19 +53,22 @@
         });
         function abrir(){
             document.getElementById("caja1").style.display="none";
-            document.getElementById("cajaa1").style.display="none";
-            document.getElementById("cajaa2").style.display="inline";
             document.getElementById("caja2").style.display="inline";
             document.getElementsByClassName("contenido")[0].style.display="flex";
-        
+        }
+        function abrir2(){
+            document.getElementById("cajaa1").style.display="none";
+            document.getElementById("cajaa2").style.display="inline";
+            document.getElementsByClassName("contenido")[0].style.display="flex";
         }
         function desaparecer(){
             document.getElementsByClassName("contenido")[0].style.display="none";
         }
 
         //añadir mas cajitas y sorpresas en este codigo 
-        document.getElementById("caja1").addEventListener("click", abrir );
-        document.getElementById("cajaa1").addEventListener("click", abrir );
+        
+        document.getElementById("caja1").addEventListener("click", abrir )
+        document.getElementById("cajaa1").addEventListener("click", abrir1 )
         document.getElementsByClassName("contenido")[0].addEventListener("click", desaparecer )
     </script>
     
