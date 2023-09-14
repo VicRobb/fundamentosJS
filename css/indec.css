@@ -1,0 +1,28 @@
+@font-face {
+    font-family: dkCrayonCrumble;
+    src: url(../DK\ Crayon\ Crumble.ttf);
+}
+html{
+    background-image: url("../img/paper.avif");
+    background-repeat: no-repeat;
+    height: 100%;
+    
+
+}
+a:hover{
+   cursor: url("../img/cheer1.png");
+}
+p, a{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-family: dkCrayonCrumble;
+    color: black;
+   
+}
+h1{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-family: dkCrayonCrumble;
+}
