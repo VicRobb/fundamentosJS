@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja sorpresa</title>
+
+    <style>
+        html {
+        
+    
+            background-image: url("https://media.giphy.com/media/VwXcgwGIPyiiY/giphy.gif"); 
+    
+        }
+        .caja, .cajaOculta{
+            width: 150px;
+        }
+        
+        .caja:hover, .cajaOculta:hover{
+            cursor: pointer;
+        }
+        .cajaOculta, .contenido,.sorpresa, .contenido2, .sorpresa2, .contenido3, .sorpresa3{
+            display: none;
+        }
+        .contenido, .contenido2, .contenido3{
+            position: absolute;
+            top: 0;
+            background-color: rgba(0, 0, 255, 0.493);
+            width: 100vw;
+            height: 100vh;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+        }
+        .sorpresa{
+            width: 500px;
+            height: 70vh;
+            background-image: url("https://media.giphy.com/media/l5JbspfwZ0yjHjlJ0K/giphy-downsized-large.gif");
+        }
+        .sorpresa2{
+            width: 500px;
+            height: 70vh;
+            background-image: url("https://media.giphy.com/media/13cxHLqRer5q6s/giphy.gif");  
+        }
+        .sorpresa3{
+            width: 500px;
+            height: 70vh;
+            background-image: url("https://media.giphy.com/media/dox6SHZcqHgOs/giphy.gif");
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="hogwarts-castle">
+    <div class="cajas">
+        <img src="./img/caja1.png" alt="" class="caja" id="caja1">
+        <img src="./img/caja2.png" alt="" class="cajaOculta" id="caja01">
+    </div>
+    <div class="contenido">
+        <div class="sorpresa">
+            Tierra
+        </div>
+    </div>
+    <div class="cajas">
+        <img src="./img/caja1.png" alt="" class="caja" id="caja2">
+        <img src="./img/caja2.png" alt="" class="cajaOculta" id="caja02">
+    </div>
+    <div class="contenido2">
+        <div class="sorpresa2">
+            Marte
+        </div>
+    </div>
+    <div class="cajas">
+        <img src="./img/caja1.png" alt="" class="caja" id="caja3">
+        <img src="./img/caja2.png" alt="" class="cajaOculta" id="caja03">
+    </div>
+    <div class="contenido3">
+        <div class="sorpresa3">
+            Jupiter
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("keyup",(evento)=>{
+            if(evento.keyCode === 27){
+                document.getElementsByClassName("contenido")[0].style.display = 'none';
+                document.getElementsByClassName("contenido2")[0].style.display = 'none';
+            }
+        })
+        function abrir(evento){
+            document.getElementById("caja1").style.display = 'none';
+            document.getElementById("caja01").style.display = 'inline';
+            document.getElementsByClassName("contenido")[0].style.display = "flex";
+            document.getElementsByClassName("sorpresa")[0].style.display = "inline";
+
+            document.getElementsByClassName("contenido")[0].addEventListener('click',(evento)=>{
+                if(evento.target.closest(".contenido")){
+                    document.getElementsByClassName("contenido")[0].style.display = 'none';
+                }
+            })
+        }
+        function abrir2(evento){
+            document.getElementById("caja2").style.display = 'none';
+            document.getElementById("caja02").style.display = 'inline';
+            document.getElementsByClassName("contenido2")[0].style.display = "flex";
+            document.getElementsByClassName("sorpresa2")[0].style.display = "inline";
+            console.log("Lol");
+            document.getElementsByClassName("contenido2")[0].addEventListener('click',(evento)=>{
+                if(evento.target.closest(".contenido2")){
+                    document.getElementsByClassName("contenido2")[0].style.display = 'none';
+                }
+            })
+        }
+        function abrir3(evento){
+            document.getElementById("caja3").style.display = 'none';
+            document.getElementById("caja03").style.display = 'inline';
+            document.getElementsByClassName("contenido3")[0].style.display = "flex";
+            document.getElementsByClassName("sorpresa3")[0].style.display = "inline";
+            console.log("Lol");
+            document.getElementsByClassName("contenido3")[0].addEventListener('click',(evento)=>{
+                if(evento.target.closest(".contenido3")){
+                    document.getElementsByClassName("contenido3")[0].style.display = 'none';
+                }
+            })
+        }
+
+        document.getElementById("caja1").addEventListener("click",abrir);
+        document.getElementById("caja01").addEventListener("click",abrir);
+        document.getElementById("caja2").addEventListener("click",abrir2);
+        document.getElementById("caja02").addEventListener("click",abrir2);
+        document.getElementById("caja3").addEventListener("click",abrir3);
+        document.getElementById("caja03").addEventListener("click",abrir3);
+    </script>
+    </div>
+</body>
+</html>

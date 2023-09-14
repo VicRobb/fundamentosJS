@@ -8,7 +8,7 @@
 <body>
     <script>
         const usuarios =  "Robbit"
-        const contra = "ColorVaca" 
+        const contra = "123" 
 	    var usuarioEsc 
         var contraEsc
 
@@ -16,8 +16,8 @@
         contraEsc = prompt("Escriba su contraseña")
 	
         try{
-            if ((usuarios != usuarioEsc) && (contra != contraEsc) ) {
-                throw new Error ("Usuario y contraseñas invalidas")
+            if ((usuarios != usuarioEsc) || (contra != contraEsc) ) {
+                throw new Error ("Usuario o contraseñas invalida")
             }
             console.log("Gracias y bienvenido al programa");
         } 

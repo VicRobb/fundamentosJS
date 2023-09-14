@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Bits</title>
     <style>
-        .cheeremote{
-            width:  25%;
-            height: auto;
-
+        .bits-hidden{
+            display: none;
         }
-        .bits-info, .buy-bits{
+        .cheeremote{
+            width: 25%;
+            height: auto;
+        }
+        .bits-info, .buy-bits, .chat{
             border: 1pt solid black;
-            width: 50%;
+            width: 50vw;
+        }
+        
+        .chat{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .chat-identity{
             width: 25px;
@@ -29,71 +36,88 @@
         .close-bits{
             cursor: pointer;
         }
-
     </style>
 </head>
 <body>
     <section class="bits-info bits-hidden" id="bits-info">
-        <div class="close-bits">
-            <span class="close" id="close-01">&#x292B;</span>
-            <section class="bits-header">
-                <h2>Apoya a tu streamer favorito</h2>
-                <p>Selecciona un Cheeremote para empezar tu cheer</p>
-                <a href="#">¿Cómo enviar un Cheer?</a>
-            </section>
-            <section class="bits-cheeremotes">
-                <img src="./img/cheer1.png" alt="cheer1" class="cheeremote">
-                <img src="./img/cheer2.png" alt="cheer2" class="cheeremote">
-                <img src="./img/cheer3.png" alt="cheer3" class="cheeremote">
-            </section>
-            <section class="bits-footer">
-                <div class="bits">Tienes <b> <span id="bits">0</span>Bits</b></div>
-                    <button class="get-bits" id="buy">Conseguir bits</button>
-            </section>
-        </div>
+        <div class="close-bits"><span id="close-01" class="close">&#x292B;</span></div>
+        <section class="bits-header">
+            <h2>¡Apoya a tu streamer enviando Cheers!</h2>
+            <p>Selecciona un Cheermote para empezar tu Cheer</p>
+            <a href="https://help.twitch.tv/s/article/guide-to-cheering-with-bits?language=es_MX#:~:text=Para%20enviar%20Cheers%2C%20escribe%20o,un%20mensaje%20a%20tu%20Cheer." class="bits-link">¿Cómo envío un Cheer?</a>
+        </section>
+        <section class="bits-cheeremotes">
+            <img src="./img/cheer2.png" alt="" class="cheeremote">
+            <img src="./img/cheer3.png" alt="" class="cheeremote">
+            <img src="./img/cheer1.png" alt="" class="cheeremote">
+        </section>
+        <section class="bits-footer">
+            <div class="bits">Tienes <b><span id="bits">0</span> Bits</b></div>
+            <button class="get-bits" id="buy">Conseguir Bits</button>
+        </section>
     </section>
-   
-    <section class="buy-bits.bits" id="buy-bits">
-        <div class="buy-bits">
-            <span class="close" id="close-02">&#x292B;</span>
-            <section class="buy-header">
-                <h1>Comprar Bits</h1>
-                <p>Los precios se muestran en MXN</p>
-            </section>
-            <section class="bit-prices">
-                <div class="bit-prices">
-                    <div class="bits">100 bits</div>
-                    <button data-bits="100" class="buy-button">$32.71</button>
-                </div>
-                <div class="bit-prices">
-                    <div class="bits">1000 bits</div>
-                    <button data-bits="1000" class="buy-button">$163.57</button>
-                </div>
-                <div class="bit-prices">
-                    <div class="bits">100000 bits</div>
-                    <button data-bits="100000"class="buy-button">$466.16</button>
-                </div>
-            </section>
-            <section class="chat">
-                <img src="./img/perritu.png" alt="perrito" class="chat-identity">
-                <input type="text" class="chat-message" placeholder="Enviar un mensaje" >
-                <img src="./img/bits.png" alt="bits" class="chat-bits" id="chat-bits"> 
-            </section>
-    </div>
+
+    <section class="buy-bits bits-hidden" id="buy-bits">
+        <div class="close-bits"><span id="close-02" class="close">&#x292B;</span></div>
+        <section class="buy-header">
+            <h1>Comprar Bits</h1>
+            <p>Los precios se muestran en MXN</p>
+        </section>
+        <section class="bits-prices">
+            <div class="bits-price">
+                <div class="bits">100 bits</div>
+                <button data-bits="100" class="buy-button">$32.71</button>
+            </div>
+            <div class="bits-price">
+                <div class="bits">1000 bits</div>
+                <button data-bits="1000" class="buy-button">$163.57</button>
+            </div>
+            <div class="bits-price">
+                <div class="bits">10000 bits</div>
+                <button data-bits="10000" class="buy-button">$466.16</button>
+            </div>
+        </section>
     </section>
+
+    <section class="chat">
+        <img src="./img/perritu.png" alt="" class="chat-identity">
+        <input type="text" class="chat-message" placeholder="Enviar un mensaje">
+        <img src="./img/bits.png" alt="" class="chat-bits" id="chat-bits">
+    </section>
+
     <script>
         const buyButtons = document.querySelectorAll(".buy-button");
-        const totalBitsSpan = document.getElementById("bits")
+        const totalBitsSpan = document.getElementById("bits");
+
         let totalBits = 0;
 
         buyButtons.forEach(button => {
+
             const bits = parseInt(button.getAttribute("data-bits"));
+
             button.addEventListener("click", ()=>{
                 totalBits += bits;
-                totalBitsSpan.textCountent = totalBits;
-            }) 
+                totalBitsSpan.textContent = totalBits;
+            })
+        });
+
+
+        document.getElementById("chat-bits").addEventListener("click",()=>{document.getElementById("bits-info").style.display='block';});
+        document.getElementById('buy').addEventListener("click",()=>{
+            document.getElementById("buy-bits").style.display="block";
+            document.getElementById("bits-info").style.display='none';
+            
         })
+
+        document.getElementById("close-01").addEventListener("click",()=>{
+            document.getElementById("bits-info").style.display = "none";
+        });
+        document.getElementById("close-02").addEventListener("click", () =>{
+            document.getElementById("bits-info").style.display = "block";
+            document.getElementById("buy-bits").style.display = 'none';
+        })
+
     </script>
-|
+
 </body>
 </html>

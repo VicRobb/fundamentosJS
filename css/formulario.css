@@ -1,0 +1,70 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://media.giphy.com/media/VwXcgwGIPyiiY/giphy.gif");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Estilos del formulario */
+  .registration {
+    background-image: url("https://media.giphy.com/media/xUA7aW1ddSxtVT5zzi/giphy-downsized-large.gif");
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    width: 330px;
+  }
+  
+  h1 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+ p{
+    color: white;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+  
+  .pure-material-textfield-outlined input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .pure-material-button-contained {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: black;
+  }
+  
+  .pure-material-button-contained:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Estilos para las alertas */
+  .alert {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: none;
+  }
+  

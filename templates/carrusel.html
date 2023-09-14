@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel</title>
+    <link rel="stylesheet" href="../css/carrusel.css">
+</head>
+<body>
+    <button class="displayGaleria" onclick="displayGallery()">Abrir galería de imágenes</button>
+    <div class="gallery-container" id="carousel" style="display: none;">
+        <div class="carousel" data-carousel>
+            <button class="carousel-button prev" data-carousel-button>&#8249;</button>
+            <button class="carousel-button next" data-carousel-button>&#8250;</button>
+
+            <ul data-slides> 
+                <li class="slide" data-active><img src="https://media.giphy.com/media/N7UQCEtGgRMRi/giphy.gif" alt=""></li>
+                <li class="slide"><img src="https://media.giphy.com/media/bkQAAeOePeK3e/giphy.gif" alt=""></li>
+                <li class="slide"><img src="https://media.giphy.com/media/TcG7Tw3uq6tJS/giphy.gif" alt=""></li>
+                <li class="slide"><img src="https://media.giphy.com/media/xx0JzzsBXzcMK542tx/giphy.gif" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function displayGallery() {
+            document.getElementById("carousel").style.display = "inline";
+        }
+
+        const buttons = document.querySelectorAll("[data-carousel-button]");
+        buttons.forEach(button => {
+            button.addEventListener("click", () => { 
+                document.getElementsByClassName("displayGaleria")[0].style.opacity= 0;
+                const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+                const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
+                const activeSlide = slides.querySelector("[data-active]");
+                let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+                if (newIndex < 0) newIndex = slides.children.length - 1;
+                if (newIndex >= slides.children.length) newIndex = 0;
+
+                slides.children[newIndex].dataset.active = true;
+                delete activeSlide.dataset.active;
+            });
+        });
+
+        document.addEventListener("keyup", (event) => {
+            if (event.keyCode === 27) {
+                document.getElementById("carousel").style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

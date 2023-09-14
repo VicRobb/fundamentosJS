@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Sesión</title>
+</head>
+<body>
+    <script>
+        const usuarios =  "Robbit"
+        const contra = "123" 
+	    var usuarioEsc 
+        var contraEsc
+
+        usuarioEsc = prompt("Escroba su usuario")
+        contraEsc = prompt("Escriba su contraseña")
+	
+        try{
+            if ((usuarios != usuarioEsc) || (contra != contraEsc) ) {
+                throw new Error ("Usuario o contraseñas invalida")
+            }
+            console.log("Gracias y bienvenido al programa");
+        } 
+            catch (error) {
+	        console.error("Error:", error.message);
+        }    
+    </script>
+</body>
+</html>

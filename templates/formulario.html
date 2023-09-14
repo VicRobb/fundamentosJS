@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+
+    <form class="registration" method="post">
+        <h1> Formulario</h1>
+        
+        <p>Email</p>
+        <label class="pure-material-textfield-outlined">
+        <input placeholder=" " type="email" required id="email-input">
+        </label>
+      
+        <p>Contraseña</p>
+        <label class="pure-material-textfield-outlined">
+         <input placeholder=" " type="password" required id="password-input">
+        </label>
+        <button id="btn-ingresar" class="pure-material-button-contained" type="submit">Sign Up</button>
+      </form>
+
+    <script>
+        function ingresar (){
+            const emailInput = document.getElementById("email-input");
+            const passwordInput = document.getElementById("password-input");
+            const passwordCorrecta = "123"
+            const emailCorrecto = "victor@gmail.com"
+
+      
+            if(emailInput.value == "" || passwordInput.value == ""){
+                alert("No has ingresado correo o contraseña")
+            }
+            if(passwordInput.value == passwordCorrecta && emailInput.value == emailCorrecto){
+                alert("Bienvenida")
+            }else{
+                alert("Su contraseña o correo estan equivocadas")
+            }
+
+            
+
+          
+
+        }
+        document.getElementById("btn-ingresar").addEventListener("click", ingresar)
+    </script>
+</body>
+</html>
