@@ -1,0 +1,124 @@
+:root{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Minecraft;
+    src: url('../fonts/Minecraft.ttf');
+}
+
+html{
+    font-family: Minecraft, Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url('../img/background.gif');
+}
+
+.container{
+    height: 100vh;
+}
+
+main, footer{
+    width: 80%;
+    margin: 10% auto;
+}
+
+
+
+.title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.steve__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.steve{
+    position: absolute;
+    width: 200px;
+    height: 400px;
+}
+
+.armadura__container{
+    width: 200px;
+    height: 400px;
+}
+
+.armadura{
+    cursor: pointer;
+}
+
+.peto{
+    position: relative;
+    width: 210px;
+    top: 24%;
+}
+
+.pantalones{
+    position: relative;
+    top: 20%;
+    left: 24%;
+    width: 55%;
+    height: 35%;
+}
+
+.botas{
+    position: relative;
+    width: 55%;
+    left: 24%;
+    top: 10%;
+}
+
+.herramientas__container{
+    display: flex;
+    justify-content: center;
+}
+
+.inventario{
+    background-image: url("../img/inventario.png");
+    width: 364px;
+    height: 78px;
+}
+
+.herramienta{
+    width: 35px;
+    position: relative;
+    top: 38px;
+    left: 4px;
+    cursor: pointer;
+}
+
+.estadisticas{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #FEF8EC;
+    border: #72311D 4px solid;
+    border-radius: 5px;
+    width: 20%;
+    padding: 20px;
+}
+
+.estadisticas h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.dato__container{
+    display: flex;
+    
+    gap:-50px;
+    flex-direction: column;
+}
+p{
+    padding: 5px;
+}
+#estadisticas__container,
+#herramienta__datos,
+#armadura__datos
+{
+    display: none;
+}

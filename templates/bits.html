@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bits</title>
+    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../img/lapiz.png">
+    <link rel="stylesheet" href="../css/bits.css">
+</head>
+<body>
+    <section class="bits-info bits-hidden" id="bits-info">
+        <div class="close-bits"><span id="close-01" class="close">&#x292B;</span></div>
+        <section class="bits-header">
+            <h2>¡Apoya a tu streamer enviando Cheers!</h2>
+            <p>Selecciona un Cheermote para empezar tu Cheer</p>
+            <a href="https://help.twitch.tv/s/article/guide-to-cheering-with-bits?language=es_MX#:~:text=Para%20enviar%20Cheers%2C%20escribe%20o,un%20mensaje%20a%20tu%20Cheer." class="bits-link">¿Cómo envío un Cheer?</a>
+        </section>
+        <section class="bits-cheeremotes">
+            <img src="../img/cheer2.png" alt="" class="cheeremote">
+            <img src="../img/cheer3.png" alt="" class="cheeremote">
+            <img src="../img/cheer1.png" alt="" class="cheeremote">
+        </section>
+        <section class="bits-footer">
+            <div class="bits">Tienes <b><span id="bits">0</span> Bits</b></div>
+            <button class="get-bits pulse" id="buy">Conseguir Bits</button>
+        </section>
+    </section>
+
+    <section class="buy-bits bits-hidden" id="buy-bits">
+        <div class="close-bits"><span id="close-02" class="close">&#x292B;</span></div>
+        <section class="buy-header">
+            <h1>Comprar Bits</h1>
+            <p>Los precios se muestran en MXN</p>
+        </section>
+        <section class="bits-prices">
+            <div class="bits-price">
+                <div class="bits">100 bits</div>
+                <button data-bits="100" class="buy-button">$32.71</button>
+            </div>
+            <div class="bits-price">
+                <div class="bits">1000 bits</div>
+                <button data-bits="1000" class="buy-button">$163.57</button>
+            </div>
+            <div class="bits-price">
+                <div class="bits">10000 bits</div>
+                <button data-bits="10000" class="buy-button">$466.16</button>
+            </div>
+        </section>
+    </section>
+
+    <section class="chat">
+        <img src="../img/perritu.png" alt="" class="chat-identity">
+        <input type="text" class="chat-message" placeholder="Enviar un mensaje">
+        <img src="../img/bits.png" alt="" class="chat-bits" id="chat-bits">
+    </section>
+
+    <script src="../js/bits.js"></script>
+
+</body>
+</html>

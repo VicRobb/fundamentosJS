@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../img/lapiz.png">
+</head>
+<style>
+    .img2{
+        opacity: 0;
+    }
+</style>
+<body>
+    <header> 
+        <p>Encriptador de texto</p>
+    </header>
+    <main>
+        <section>
+            <label for="tex">Texto a encriptar</label>
+            <input type="text" id="tex">
+            <p>	&#9432; Sólo letras minúsculas y sin acentos</p>
+            <div>
+                <button onclick="encriptar()" id="encriptar">Encriptar</button>
+                <button onclick="desencriptar()" id="desencriptar">Desencriptar</button>
+            </div>
+        </section>
+
+        <section>
+            <span id="resultado">Resultado:</span>
+            <div>
+                <div class="contenido">
+                <img src="../img/perritotriste.jpg" alt="Imagen buscando texto" class="img1">
+                <img src="../img/descarga.jpg" alt="Imagen que ya incripto algo" class="img2">
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        var encrip = document.getElementById("tex");
+        var resultado = document.getElementById("resultado");
+
+
+        //lo hice con el idioma f pq no tenia los valores pipipi
+        function encriptar() {
+            var textoOriginal = encrip.value;
+
+            if (textoOriginal === "") {
+                document.getElementsByClassName("img1")[0].style.display = "none";
+                textoEncriptado = "Ingrese un texto a Encriptar";
+                resultado.textContent = "Resultado: " + textoEncriptado;
+            } else {
+                document.getElementsByClassName("img1")[0].style.display = "none";
+                document.getElementsByClassName("img2")[0].style.opacity = 1;
+                var textoEncriptado = textoOriginal.replace(/a/g, 'ai').replace(/e/g, 'enter').replace(/i/g, 'imes').replace(/o/g, 'ober').replace(/u/g, 'ufat');
+            }
+            resultado.textContent = "Resultado: " + textoEncriptado;
+        }
+
+        function desencriptar() {
+            var textoOriginal = encrip.value;
+
+            if (textoOriginal === "") {
+                document.getElementsByClassName("img1")[0].style.display = "none";
+                textoEncriptado = "Ingrese un texto a Desencriptar";
+                resultado.textContent = "Resultado: " + textoEncriptado;
+            } else {
+                document.getElementsByClassName("img1")[0].style.display = "none";
+                document.getElementsByClassName("img2")[0].style.opacity = 1;
+                var textoEncriptado = textoOriginal.replace(/ai/g, 'a').replace(/enter/g, 'e').replace(/imes/g, 'i').replace(/ober/g, 'o').replace(/ufat/g, 'u');
+            }
+            resultado.textContent = "Resultado: " + textoEncriptado;
+        }
+        
+    </script>
+</body>
+</html>

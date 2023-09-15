@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caja sorpresa</title>
+    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../img/lapiz.png">
 
     <style>
         html {
-        
-    
             background-image: url("https://media.giphy.com/media/VwXcgwGIPyiiY/giphy.gif"); 
-    
         }
         .caja, .cajaOculta{
             width: 150px;
+        }
+        .cajas{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
         }
         
         .caja:hover, .cajaOculta:hover{
@@ -23,6 +27,7 @@
             display: none;
         }
         .contenido, .contenido2, .contenido3{
+            
             position: absolute;
             top: 0;
             background-color: rgba(0, 0, 255, 0.493);
@@ -51,10 +56,9 @@
     </style>
 </head>
 <body>
-    <div class="hogwarts-castle">
     <div class="cajas">
-        <img src="./img/caja1.png" alt="" class="caja" id="caja1">
-        <img src="./img/caja2.png" alt="" class="cajaOculta" id="caja01">
+        <img src="../img/caja1.png" alt="" class="caja" id="caja1">
+        <img src="../img/caja2.png" alt="" class="cajaOculta" id="caja01">
     </div>
     <div class="contenido">
         <div class="sorpresa">
@@ -62,8 +66,8 @@
         </div>
     </div>
     <div class="cajas">
-        <img src="./img/caja1.png" alt="" class="caja" id="caja2">
-        <img src="./img/caja2.png" alt="" class="cajaOculta" id="caja02">
+        <img src="../img/caja1.png" alt="" class="caja" id="caja2">
+        <img src="../img/caja2.png" alt="" class="cajaOculta" id="caja02">
     </div>
     <div class="contenido2">
         <div class="sorpresa2">
@@ -71,8 +75,8 @@
         </div>
     </div>
     <div class="cajas">
-        <img src="./img/caja1.png" alt="" class="caja" id="caja3">
-        <img src="./img/caja2.png" alt="" class="cajaOculta" id="caja03">
+        <img src="../img/caja1.png" alt="" class="caja" id="caja3">
+        <img src="../img/caja2.png" alt="" class="cajaOculta" id="caja03">
     </div>
     <div class="contenido3">
         <div class="sorpresa3">
@@ -131,6 +135,7 @@
         document.getElementById("caja3").addEventListener("click",abrir3);
         document.getElementById("caja03").addEventListener("click",abrir3);
     </script>
+    
     </div>
 </body>
 </html>

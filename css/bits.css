@@ -1,0 +1,73 @@
+body{
+    background-color:gray;
+    
+}
+.bits-hidden{
+    display: none;
+}
+.cheeremote{
+    width: 25%;
+    height: auto;
+}
+.bits-info, .buy-bits, .chat{
+    border: 1pt solid black;
+    width: 50vw;
+}
+
+.chat{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.chat-identity{
+    width: 25px;
+    height: auto;
+}
+.chat-message{
+    width: 90%;
+    background-color: #aaaaaa;
+    color: white;
+}
+.chat-message::placeholder{
+    
+    color: white;
+}
+
+.chat-bits{
+    width: 20px;
+    cursor: pointer;
+}
+.close-bits{
+    cursor: pointer;
+ }
+
+ .pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+button {  
+    color: var(--color);
+    transition: 0.25s;
+    
+    &:hover,
+    &:focus { 
+      border-color: var(--hover);
+      color: #fff;
+    }
+  }
+button {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+  }
+
+.gg{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+}
